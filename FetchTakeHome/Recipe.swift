@@ -12,8 +12,8 @@ struct Recipes: Codable, Hashable {
 struct RecipeItem: Codable, Hashable {
     var cuisine: String
     var name: String
-    var photoUrlLarge: String
-    var photoUrlSmall: String
+    var photoUrlLarge: String?
+    var photoUrlSmall: String?
     var sourceUrl: String?
     var uuid: String
     var youtubeUrl: String?

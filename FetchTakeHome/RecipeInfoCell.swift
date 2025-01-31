@@ -12,7 +12,7 @@ struct RecipeInfoCell: View {
     
     var body: some View {
         HStack {
-            CachingHelper(url: URL(string: item.photoUrlSmall)) { image in
+            CachingHelper(url: URL(string: item.photoUrlSmall ?? "")) { image in
                     image
                         .resizable()
                         .aspectRatio(contentMode: .fit)
