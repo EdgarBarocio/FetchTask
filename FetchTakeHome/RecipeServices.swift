@@ -14,6 +14,7 @@ class RecipeServices: APIService {
                 let data = try await URLSession.shared.data(from: url)
                 
                 let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
                 let result = try decoder.decode(Recipes.self, from: data.0)
                 
                 return result

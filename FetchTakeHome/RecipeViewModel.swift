@@ -18,16 +18,22 @@ class RecipeViewModel: ObservableObject {
 
     }
     
+    @MainActor
     func fetchRecipes(url: String) async {
+        state = .loading
         do {
-            guard let result = try await service.fetchRecipes(url: url) else {
-                state = .error(Error.self as! Error)
-                return
-            }
+           if let result = try await service.fetchRecipes(url: url) {
+               if result.recipes.isEmpty {
+                   state = .error("Data is empty")
+               } else {
+                   state = .loaded(result)
+               }
+           } else {
+               state = .error("Data is malformed")
+           }
             
-            state = .loaded(result)
         } catch {
-            state = .error(error)
+            state = .error(error.localizedDescription)
         }
     }
 }

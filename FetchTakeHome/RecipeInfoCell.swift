@@ -12,10 +12,29 @@ struct RecipeInfoCell: View {
     
     var body: some View {
         HStack {
-            AsyncImage(url: URL(string: item.photoSmall)!, scale: 3.5)
+            CachingHelper(url: URL(string: item.photoUrlSmall)) { image in
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+            } placeholder: {
+                ProgressView()
+            }
+//            AsyncImage(url: URL(string: item.photoUrlSmall)) { phase in
+//                switch phase {
+//                    case .failure:
+//                    Image(systemName: "photo")
+//                        .font(.largeTitle)
+//                    case .success(let image):
+//                    image
+//                        .resizable()
+//                    default:
+//                        ProgressView()
+//                }
+//            }
                 .clipShape(Circle())
                 .overlay(Circle().stroke(.gray, lineWidth: 2))
-                .frame(width: 100, height: 100)
+                .frame(width: 75, height: 75)
+            
             Text(item.name)
                 .font(.headline)
             Spacer()

@@ -13,5 +13,5 @@ enum State<T> {
     case idle
     case loaded(T)
     case loading
-    case error(Error)
+    case error(String)
 }
