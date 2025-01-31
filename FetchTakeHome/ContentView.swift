@@ -8,17 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var viewModel: RecipeViewModel
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        
+        Group {
+            
         }
-        .padding()
+        
+        Button("GetStarted") {
+            
+        } .buttonStyle(.borderedProminent)
     }
 }
 
-#Preview {
-    ContentView()
-}
+//#Preview {
+//    ContentView()
+//}
