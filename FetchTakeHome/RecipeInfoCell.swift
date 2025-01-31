@@ -12,6 +12,7 @@ struct RecipeInfoCell: View {
     
     var body: some View {
         HStack {
+// NOTE: Comment out CachingHelper implementation and uncomment AsyncImage implementation to switch between both systems. 
             CachingHelper(url: URL(string: item.photoUrlSmall ?? "")) { image in
                     image
                         .resizable()
