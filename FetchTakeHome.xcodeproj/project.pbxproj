@@ -31,21 +31,11 @@
 			);
 			target = 8E49727C2D468AEE00E1031B /* FetchTakeHome */;
 		};
-		8E44ECA62D4DBDAB00405182 /* Exceptions for "FetchTakeHome" folder in "FetchTakeHome" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				README.md,
-			);
-			target = 8E49727C2D468AEE00E1031B /* FetchTakeHome */;
-		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		8E49727F2D468AEE00E1031B /* FetchTakeHome */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				8E44ECA62D4DBDAB00405182 /* Exceptions for "FetchTakeHome" folder in "FetchTakeHome" target */,
-			);
 			path = FetchTakeHome;
 			sourceTree = "<group>";
 		};
