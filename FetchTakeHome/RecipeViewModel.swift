@@ -8,12 +8,12 @@
 import Foundation
 import SwiftUI
 
-class RecipeViewModel: ObservableObject {
-    private let service: RecipeServices
+class RecipeViewModel: ObservableObject, ModelProtocol {
+    private let service: APIService
     
     @Published private(set) var state: State<Recipes> = .idle
     
-    init(service: RecipeServices) {
+    init(service: APIService) {
         self.service = service
 
     }

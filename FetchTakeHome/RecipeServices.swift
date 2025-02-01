@@ -7,6 +7,7 @@
 import Foundation
 
 class RecipeServices: APIService {
+    
     func fetchRecipes(url: String) async throws -> Recipes? {
 
         if let url = URL(string: url) {
